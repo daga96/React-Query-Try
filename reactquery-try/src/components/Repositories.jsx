@@ -6,10 +6,9 @@ import "../styles/style.css";
 const Repositories = () => {
   const { isLoading, isError, data, error, refetch } = useQuery(
     ["repo"],
-    () => {
-      return axios
-        .get("https://api.github.com/users/daga96/repos")
-        .then((res) => res.data);
+    async () => {
+      const res = await axios.get("https://api.github.com/users/daga96/repos");
+      return res.data;
     }
   );
 
@@ -19,7 +18,7 @@ const Repositories = () => {
   console.log(data);
 
   return (
-    <>
+    <div className="wraper">
       <div className="grid">
         {data.map((repo) => {
           return (
@@ -29,7 +28,7 @@ const Repositories = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
