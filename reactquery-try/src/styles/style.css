@@ -1,0 +1,25 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.grid-element {
+  padding: 10px;
+  background-color: #d1eef3;
+  border-radius: 5px;
+}
+
+.grid-element:hover {
+  background-color: #96d0da;
+}
+
+.grid-element a {
+  text-decoration: none;
+  color: #333;
+}
+
+.grid-element:hover a {
+  text-decoration: none;
+  color: #fff;
+}
